@@ -34,12 +34,9 @@ public class GameActivity extends AppCompatActivity {
         Log.d("You pressed", game.getPlayerChoice());
 
         game.setComputerToRandomChoice();
-        String winner = game.getWinner();
-        String info = game.printInputs();
 
         Intent newIntent = new Intent(this, ResultActivity.class);
-        newIntent.putExtra("winner", winner);
-        newIntent.putExtra("info", info);
+        newIntent.putExtra("game", game);
         startActivity(newIntent);
     }
 
@@ -53,12 +50,9 @@ public class GameActivity extends AppCompatActivity {
         Log.d("You pressed", game.getPlayerChoice());
 
         game.setComputerToRandomChoice();
-        String winner = game.getWinner();
-        String info = game.printInputs();
 
         Intent newIntent = new Intent(this, ResultActivity.class);
-        newIntent.putExtra("winner", winner);
-        newIntent.putExtra("info", info);
+        newIntent.putExtra("game", game);
         startActivity(newIntent);
     }
 
@@ -72,12 +66,9 @@ public class GameActivity extends AppCompatActivity {
         Log.d("You pressed", game.getPlayerChoice());
 
         game.setComputerToRandomChoice();
-        String winner = game.getWinner();
-        String info = game.printInputs();
 
         Intent newIntent = new Intent(this, ResultActivity.class);
-        newIntent.putExtra("winner", winner);
-        newIntent.putExtra("info", info);
+        newIntent.putExtra("game", game);
         startActivity(newIntent);
     }
 }
