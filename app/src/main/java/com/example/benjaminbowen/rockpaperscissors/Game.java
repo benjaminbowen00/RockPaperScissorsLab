@@ -11,7 +11,7 @@ import java.util.Collections;
 public class Game implements Serializable {
 
     private String  playerChoice;
-    private  String computerChoice;
+    private String computerChoice;
     private ArrayList<String> arrayListPlayTypes;
 
     public Game(String playerChoice) {
