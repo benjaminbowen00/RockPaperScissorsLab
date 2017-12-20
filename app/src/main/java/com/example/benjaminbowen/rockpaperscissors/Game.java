@@ -38,22 +38,22 @@ public class Game implements Serializable {
         if(this.playerChoice.equals(this.computerChoice)){
             return "It's a draw";
         }
-        if(this.playerChoice.equals("Rock") && this.computerChoice.equals("Paper")){
+        if(this.playerChoice.equals("rock") && this.computerChoice.equals("paper")){
             return "The computer wins with paper";
         }
-        if(this.playerChoice.equals("Rock") && this.computerChoice.equals("Scissors")){
-            return "The player wins with rock";
+        if(this.playerChoice.equals("rock") && this.computerChoice.equals("scissors")){
+            return "You win with rock";
         }
-        if(this.playerChoice.equals("Paper") && this.computerChoice.equals("Rock")){
-            return "The player wins with paper";
+        if(this.playerChoice.equals("paper") && this.computerChoice.equals("rock")){
+            return "You win with paper";
         }
-        if(this.playerChoice.equals("Paper") && this.computerChoice.equals("Scissors")){
+        if(this.playerChoice.equals("paper") && this.computerChoice.equals("scissors")){
             return "The computer wins with scissors";
         }
-        if(this.playerChoice.equals("Scissors") && this.computerChoice.equals("Paper")){
-            return "The player wins with scissors";
+        if(this.playerChoice.equals("scissors") && this.computerChoice.equals("paper")){
+            return "You win with scissors";
         }
-        if(this.playerChoice.equals("Scissors") && this.computerChoice.equals("Rock")){
+        if(this.playerChoice.equals("scissors") && this.computerChoice.equals("rock")){
             return "The computer wins with rock";
         }
         return null;

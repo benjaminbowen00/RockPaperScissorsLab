@@ -55,8 +55,8 @@ public class GameTest {
     }
 
 
-//    @Test
-//    public void canGetRandomWinner(){
-//        assertEquals("The player wins with rock", game.getWinner());
-//    }
+    @Test
+    public void canGetRandomWinner(){
+        assertEquals("The player wins with rock", game.getWinner());
+    }
 }
