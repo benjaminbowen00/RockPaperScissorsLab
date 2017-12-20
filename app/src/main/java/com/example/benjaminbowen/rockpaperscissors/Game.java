@@ -16,9 +16,9 @@ public class Game {
     public Game(String playerChoice) {
         this.playerChoice = playerChoice;
         arrayListPlayTypes = new ArrayList<>();
-        arrayListPlayTypes.add("Rock");
-        arrayListPlayTypes.add("Paper");
-        arrayListPlayTypes.add("Scissors");
+        arrayListPlayTypes.add("rock");
+        arrayListPlayTypes.add("paper");
+        arrayListPlayTypes.add("scissors");
 
 
         Collections.shuffle(arrayListPlayTypes);
@@ -61,4 +61,9 @@ public class Game {
     public void setComputerChoice(String computerChoice) {
         this.computerChoice = computerChoice;
     }
+
+    public String printInputs(){
+        return "The computer played " + getComputerChoice() + " and you played " + getPlayerChoice() + ".";
+    }
+
 }

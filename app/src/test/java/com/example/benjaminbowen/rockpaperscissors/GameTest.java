@@ -16,12 +16,12 @@ public class GameTest {
 
     @Before
     public void before(){
-        game = new Game("Rock");
+        game = new Game("rock");
     }
 
     @Test
     public void canGetPlayersChoice(){
-        assertEquals("Rock", game.getPlayerChoice());
+        assertEquals("rock", game.getPlayerChoice());
     }
 
     @Test
@@ -32,20 +32,26 @@ public class GameTest {
 
     @Test
     public void canGetWinnerDraw(){
-        game.setComputerChoice("Rock");
+        game.setComputerChoice("rock");
         assertEquals("It's a draw", game.getWinner());
     }
 
     @Test
     public void canGetWinnerComputerPaper(){
-        game.setComputerChoice("Paper");
+        game.setComputerChoice("paper");
         assertEquals("The computer wins with paper", game.getWinner());
     }
 
     @Test
     public void canGetWinnerCOmputerScissors(){
-        game.setComputerChoice("Scissors");
+        game.setComputerChoice("scissors");
         assertEquals("The player wins with rock", game.getWinner());
+    }
+
+    @Test
+    public void canPrintInputs(){
+        game.setComputerChoice("scissors");
+        assertEquals("The computer played scissors and you played rock.", game.printInputs());
     }
 
 
