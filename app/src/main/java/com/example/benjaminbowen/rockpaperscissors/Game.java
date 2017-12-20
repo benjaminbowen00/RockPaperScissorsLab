@@ -1,5 +1,6 @@
 package com.example.benjaminbowen.rockpaperscissors;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -7,7 +8,7 @@ import java.util.Collections;
  * Created by benjaminbowen on 20/12/2017.
  */
 
-public class Game {
+public class Game implements Serializable {
 
     private String  playerChoice;
     private  String computerChoice;
