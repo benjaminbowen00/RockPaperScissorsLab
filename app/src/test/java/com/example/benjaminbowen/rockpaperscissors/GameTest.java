@@ -16,7 +16,7 @@ public class GameTest {
 
     @Before
     public void before(){
-        game = new Game("rock");
+        game = new Game();
     }
 
     @Test
@@ -28,6 +28,19 @@ public class GameTest {
     public void canGetComputerChoice(){
         assertNotNull(game.getComputerChoice());
 //        assertEquals("Rock", game.getComputerChoice());
+    }
+
+    @Test
+    public void canSetRandomComputerChoice(){
+        game.setComputerToRandomChoice();
+//        assertEquals("rock", game.getComputerChoice());
+        assertNotNull(game.getComputerChoice());
+    }
+
+    @Test
+    public void canSetPlayerChoice(){
+        game.setPlayerChoice("paper");
+        assertEquals("paper", game.getPlayerChoice());
     }
 
     @Test
@@ -58,5 +71,17 @@ public class GameTest {
     @Test
     public void canGetRandomWinner(){
         assertEquals("The player wins with rock", game.getWinner());
+    }
+
+    @Test
+    public void canGetScoreNoGames(){
+        assertEquals("The score\n\nYou: 0\nComputer: 0", game.printScore());
+    }
+
+    @Test
+    public void canGetScoreOneGame(){
+        game.setComputerChoice("paper");
+        game.getWinner();
+        assertEquals("The score\n\nYou: 0\nComputer: 1", game.printScore());
     }
 }

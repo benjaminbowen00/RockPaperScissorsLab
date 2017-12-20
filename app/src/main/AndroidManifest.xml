@@ -14,7 +14,7 @@
         </activity>
         <activity
             android:name=".ResultActivity"
-            android:parentActivityName=".GameActivity" />
+           />
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

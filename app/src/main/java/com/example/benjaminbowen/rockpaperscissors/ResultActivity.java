@@ -21,10 +21,13 @@ public class ResultActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
-        Game game = (Game) extras.get("game");
+        String info = (String) extras.get("info");
+        String winner = (String) extras.get("winner");
 
-        inputStatement.setText(game.printInputs());
-        outcomeStatement.setText(game.getWinner());
+
+
+        inputStatement.setText(info);
+        outcomeStatement.setText(winner);
 
 
 

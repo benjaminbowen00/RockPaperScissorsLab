@@ -21,35 +21,63 @@ public class GameActivity extends AppCompatActivity {
         rockButton = findViewById(R.id.rock_button);
         paperButton = findViewById(R.id.paper_button);
         scissorsButton = findViewById(R.id.scissors_button);
+
     }
 
     public void onRockButtonClicked(View button){
+        Intent intent = getIntent();
+        Bundle extra = intent.getExtras();
+        Game game = (Game) extra.get("game");
+
         String input = "rock";
-        Game game = new Game(input);
+        game.setPlayerChoice(input);
         Log.d("You pressed", game.getPlayerChoice());
 
-        Intent intent = new Intent(this, ResultActivity.class);
-        intent.putExtra("game", game);
-        startActivity(intent);
+        game.setComputerToRandomChoice();
+        String winner = game.getWinner();
+        String info = game.printInputs();
+
+        Intent newIntent = new Intent(this, ResultActivity.class);
+        newIntent.putExtra("winner", winner);
+        newIntent.putExtra("info", info);
+        startActivity(newIntent);
     }
 
     public void onPaperButtonClicked(View button){
+        Intent intent = getIntent();
+        Bundle extra = intent.getExtras();
+        Game game = (Game) extra.get("game");
+
         String input = "paper";
-        Game game = new Game(input);
+        game.setPlayerChoice(input);
         Log.d("You pressed", game.getPlayerChoice());
 
-        Intent intent = new Intent(this, ResultActivity.class);
-        intent.putExtra("game", game);
-        startActivity(intent);
+        game.setComputerToRandomChoice();
+        String winner = game.getWinner();
+        String info = game.printInputs();
+
+        Intent newIntent = new Intent(this, ResultActivity.class);
+        newIntent.putExtra("winner", winner);
+        newIntent.putExtra("info", info);
+        startActivity(newIntent);
     }
 
     public void onScissorsButtonClicked(View button){
+        Intent intent = getIntent();
+        Bundle extra = intent.getExtras();
+        Game game = (Game) extra.get("game");
+
         String input = "scissors";
-        Game game = new Game(input);
+        game.setPlayerChoice(input);
         Log.d("You pressed", game.getPlayerChoice());
 
-        Intent intent = new Intent(this, ResultActivity.class);
-        intent.putExtra("game", game);
-        startActivity(intent);
+        game.setComputerToRandomChoice();
+        String winner = game.getWinner();
+        String info = game.printInputs();
+
+        Intent newIntent = new Intent(this, ResultActivity.class);
+        newIntent.putExtra("winner", winner);
+        newIntent.putExtra("info", info);
+        startActivity(newIntent);
     }
 }
