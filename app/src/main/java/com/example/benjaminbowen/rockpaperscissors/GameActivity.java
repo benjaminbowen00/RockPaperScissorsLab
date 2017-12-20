@@ -35,12 +35,25 @@ public class GameActivity extends AppCompatActivity {
         computerScore.setText(game.getComputerScore().toString());
     }
 
-    public void onRockButtonClicked(View button){
+
+    public String getCorrectInput(View view){
+        switch(view.getId()){
+            case R.id.rock_button:
+                return "rock";
+            case R.id.paper_button:
+                return "paper";
+            case R.id.scissors_button:
+                return "scissors";
+        }
+        return null;
+    }
+
+    public void onButtonClicked(View view){
+        String input = getCorrectInput(view);
         Intent intent = getIntent();
         Bundle extra = intent.getExtras();
         Game game = (Game) extra.get("game");
 
-        String input = "rock";
         game.setPlayerChoice(input);
         Log.d("You pressed", game.getPlayerChoice());
 
@@ -49,37 +62,9 @@ public class GameActivity extends AppCompatActivity {
         Intent newIntent = new Intent(this, ResultActivity.class);
         newIntent.putExtra("game", game);
         startActivity(newIntent);
+
     }
 
-    public void onPaperButtonClicked(View button){
-        Intent intent = getIntent();
-        Bundle extra = intent.getExtras();
-        Game game = (Game) extra.get("game");
 
-        String input = "paper";
-        game.setPlayerChoice(input);
-        Log.d("You pressed", game.getPlayerChoice());
 
-        game.setComputerToRandomChoice();
-
-        Intent newIntent = new Intent(this, ResultActivity.class);
-        newIntent.putExtra("game", game);
-        startActivity(newIntent);
-    }
-
-    public void onScissorsButtonClicked(View button){
-        Intent intent = getIntent();
-        Bundle extra = intent.getExtras();
-        Game game = (Game) extra.get("game");
-
-        String input = "scissors";
-        game.setPlayerChoice(input);
-        Log.d("You pressed", game.getPlayerChoice());
-
-        game.setComputerToRandomChoice();
-
-        Intent newIntent = new Intent(this, ResultActivity.class);
-        newIntent.putExtra("game", game);
-        startActivity(newIntent);
-    }
 }
