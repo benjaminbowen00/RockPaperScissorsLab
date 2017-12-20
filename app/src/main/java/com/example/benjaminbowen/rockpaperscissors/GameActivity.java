@@ -6,12 +6,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class GameActivity extends AppCompatActivity {
 
     Button rockButton;
     Button paperButton;
     Button scissorsButton;
+    TextView playerScore;
+    TextView computerScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +24,15 @@ public class GameActivity extends AppCompatActivity {
         rockButton = findViewById(R.id.rock_button);
         paperButton = findViewById(R.id.paper_button);
         scissorsButton = findViewById(R.id.scissors_button);
+        playerScore = findViewById(R.id.you_score);
+        computerScore = findViewById(R.id.computer_score);
 
+        Intent intent = getIntent();
+        Bundle extra = intent.getExtras();
+        Game game = (Game) extra.get("game");
+
+        playerScore.setText(game.getPlayerScore().toString());
+        computerScore.setText(game.getComputerScore().toString());
     }
 
     public void onRockButtonClicked(View button){

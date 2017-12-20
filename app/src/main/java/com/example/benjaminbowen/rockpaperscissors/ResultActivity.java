@@ -11,7 +11,8 @@ public class ResultActivity extends AppCompatActivity {
 
     TextView inputStatement;
     TextView outcomeStatement;
-    TextView score;
+    TextView playerScore;
+    TextView computerScore;
     Button playAgainButton;
 
     @Override
@@ -21,8 +22,9 @@ public class ResultActivity extends AppCompatActivity {
 
         inputStatement = findViewById(R.id.input_statement);
         outcomeStatement = findViewById(R.id.outcome_statement);
-        score = findViewById(R.id.score_text);
         playAgainButton = findViewById(R.id.play_again_button);
+        playerScore = findViewById(R.id.you_score2);
+        computerScore = findViewById(R.id.computer_score2);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -31,7 +33,8 @@ public class ResultActivity extends AppCompatActivity {
 
         inputStatement.setText(game.printInputs());
         outcomeStatement.setText(game.getWinner());
-        score.setText(game.printScore());
+        playerScore.setText(game.getPlayerScore().toString());
+        computerScore.setText(game.getComputerScore().toString());
     }
 
     public void onPlayAgainButtonClicked(View button){

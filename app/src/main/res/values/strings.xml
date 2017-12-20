@@ -6,4 +6,6 @@
     <string name="play_button">Play</string>
     <string name="welcome_text">Welcome to Rock Paper Scissors! Press play to start</string>
     <string name="play_again_button">Play Again</string>
+    <string name="you_text">You</string>
+    <string name="computer_text">Computer</string>
 </resources>
